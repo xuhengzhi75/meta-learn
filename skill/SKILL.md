@@ -31,9 +31,44 @@ Your role as the AI coach: don't just answer questions. Design a learning experi
 
 ---
 
+## Persistent Learning Files
+
+Learning sessions are persisted to disk so they survive across sessions. Every topic gets its own folder under `learning/` in the current working directory.
+
+### File structure
+
+```
+learning/
+└── <topic-slug>/         # e.g. claude-code-source, react-hooks, system-design
+    ├── map.md            # Knowledge map (3-layer skeleton + bottlenecks)
+    ├── progress.md       # What's understood, what's fuzzy, open questions
+    └── log.md            # Chronological session log (date + key insights)
+```
+
+### Session start — always do this first
+
+When the skill is invoked, before anything else:
+
+1. Check if `learning/` exists in the current working directory. If not, it will be created when the topic is known.
+2. If the user mentions a topic (or it's clear from context), derive a short slug (e.g. "Claude Code源码" → `claude-code-source`).
+3. Check if `learning/<slug>/` exists. If it does, **read all three files** and briefly summarize to the user: "上次我们学到了X，当前悬念是Y，要继续吗？"
+4. If the folder doesn't exist yet, create it (with empty files) once the topic is confirmed.
+
+### Saving progress — do this at end of every session or when user asks
+
+After meaningful learning happens (a concept clicked, a question was answered, a new question arose), update the files:
+
+- **map.md**: Add or refine nodes in the knowledge map as understanding grows.
+- **progress.md**: Update what's solid vs. fuzzy. Keep a "当前悬念" (open question to pick up next time) section at the top — this is the most important field.
+- **log.md**: Append a dated entry (e.g. `## 2026-04-10`) with 3-5 bullet points of key insights from this session.
+
+Don't wait until the end — save incrementally when something important is understood or a new question emerges. The user's time is fragmented; a half-session should still leave traces.
+
+---
+
 ## Phase 0: Diagnose (30 seconds, always do this first)
 
-Before doing anything else, ask the user these four questions — but make it conversational, not a form. If you already have the answers from context, skip asking and proceed.
+Before doing anything else, ask the user these four questions — but make it conversational, not a form. If you already have the answers from context (including from the persistent files), skip asking and proceed.
 
 1. **Baseline**: What do you already know about this topic? (完全零基础 / 有一些了解 / 有基础想深入)
 2. **Goal**: What specifically do you want to be able to DO after learning this? (Not "understand X" — what concrete outcome?)
