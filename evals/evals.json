@@ -1,0 +1,85 @@
+{
+  "skill_name": "meta-learn",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我完全不懂投资，但我想在3个月内学会基本的股票投资分析，能看懂财报、做简单的公司估值。我每天大概能投入45分钟。帮我制定一个学习计划。",
+      "expected_output": "Should: (1) Ask or infer the 4 diagnosis questions (baseline=zero, goal=read financials+valuation, time=45min/day, deadline=3 months). (2) Produce a 3-layer knowledge skeleton for investment analysis with core concepts marked. (3) Generate a realistic weekly learning plan broken into daily tasks. (4) Identify the 2-3 hardest conceptual bottlenecks (e.g., DCF valuation, reading cash flow statements). (5) Offer to enter any of the 5 learning modes. Should NOT: dump a generic investment reading list, give a vague 'study hard' plan, or ignore the time constraint.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "produces-knowledge-skeleton",
+          "text": "The response includes a structured knowledge map or tree with at least 2 layers (core vs. advanced), not just a flat list of topics"
+        },
+        {
+          "name": "respects-time-constraint",
+          "text": "The learning plan accounts for the 45-minute daily limit and 3-month deadline — tasks are scoped to fit, not a wishlist"
+        },
+        {
+          "name": "identifies-bottlenecks",
+          "text": "The response explicitly calls out 1-3 conceptual bottlenecks or hard spots that beginners typically struggle with in investment analysis"
+        },
+        {
+          "name": "offers-interactive-modes",
+          "text": "The response mentions or offers at least one interactive learning mode (Feynman, Socratic drill, feedback, etc.) rather than just delivering a static plan"
+        },
+        {
+          "name": "responds-in-chinese",
+          "text": "The response is primarily in Chinese, matching the user's language"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I've been trying to understand transformer architecture for a few weeks. I get the basic idea of attention, but I'm fuzzy on why multi-head attention is better than single-head, and I don't really understand positional encoding intuitively. Can you help me actually understand these two things deeply?",
+      "expected_output": "Should: (1) Recognize this is a targeted deep-dive request (Mode A: [拆] Deep Dive), not a full curriculum request. (2) Explain multi-head attention with a clear intuition/analogy (e.g., multiple perspectives, parallel feature detectors). (3) Explain positional encoding intuitively (why it's needed, how sinusoidal encoding works conceptually). (4) Use analogies aggressively. (5) Optionally offer to switch to Feynman mode to test understanding. Should NOT: give a math-heavy explanation without intuition, repeat basic attention concepts the user already knows, or generate a full transformer learning plan when they just want two concepts explained.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "uses-analogy-for-multihead",
+          "text": "The explanation of multi-head attention includes at least one concrete analogy or metaphor (not just a technical description)"
+        },
+        {
+          "name": "explains-positional-encoding-intuitively",
+          "text": "Positional encoding is explained with an intuition for WHY it's needed (transformers have no inherent order), not just HOW it works mathematically"
+        },
+        {
+          "name": "responds-in-english",
+          "text": "The response is in English, matching the user's language"
+        },
+        {
+          "name": "doesnt-over-explain-basics",
+          "text": "The response doesn't re-explain basic attention (which the user said they already understand) — it focuses on the two specific gaps"
+        },
+        {
+          "name": "offers-feynman-or-followup",
+          "text": "The response offers some form of interactive follow-up: Feynman testing, Socratic questions, or an invitation to test understanding"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "我刚学完了「复利」这个概念。我的理解是：复利就是利滚利，钱放着会自动越来越多，时间越长效果越明显。你来考考我，看我真的懂了没有。",
+      "expected_output": "Should: (1) Recognize this as a Feynman/testing request and enter Mode B [练]. (2) Play the role of a curious questioner or devil's advocate. (3) Ask probing questions that reveal whether the user truly understands (e.g., 'what makes it different from simple interest?', 'why does time matter more than rate in the long run?', 'can you give me a concrete example with numbers?', 'what are the conditions where compounding DOESN'T work?'). (4) React to the user's explanation — if it's shallow, push deeper; if it's solid, acknowledge and go harder. Should NOT: just say 'good job, you understand it', give a lecture about compounding, or ask only surface-level questions.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "enters-feynman-mode",
+          "text": "The response enters an interactive testing/questioning mode rather than lecturing or summarizing compounding"
+        },
+        {
+          "name": "asks-probing-questions",
+          "text": "The response asks at least 1 sharp, specific question that targets the weakest point in the user's explanation — not a generic 'do you understand?' but something that would expose surface-level understanding"
+        },
+        {
+          "name": "challenges-the-explanation",
+          "text": "The response targets a gap or oversimplification in the user's explanation ('利滚利，钱放着会自动越来越多' is vague on mechanism — why does it grow? under what conditions?) rather than accepting it at face value"
+        },
+        {
+          "name": "responds-in-chinese",
+          "text": "The response is primarily in Chinese"
+        }
+      ]
+    }
+  ]
+}

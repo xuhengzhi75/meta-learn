@@ -1,0 +1,82 @@
+[
+  {
+    "query": "我想在两个月内学会Python，我现在完全零基础，每天能抽出一个小时，帮我规划一下怎么学",
+    "should_trigger": true
+  },
+  {
+    "query": "I've been reading about machine learning for a few months but everything feels disconnected — I understand individual algorithms but can't see how they fit together. How do I actually get good at this?",
+    "should_trigger": true
+  },
+  {
+    "query": "帮我学一下期权定价，我有金融背景但没接触过衍生品，想3周内能看懂基本的BS模型",
+    "should_trigger": true
+  },
+  {
+    "query": "我刚看完《思考，快与慢》第一章，里面讲系统1和系统2，我觉得我懂了，你来考考我",
+    "should_trigger": true
+  },
+  {
+    "query": "teach me about transformer architecture, i know basic python and have done a pytorch tutorial but haven't touched NLP",
+    "should_trigger": true
+  },
+  {
+    "query": "我在备考PMP，考试是6周后，我每天只有40分钟，现在看了一遍教材但感觉记不住，怎么办",
+    "should_trigger": true
+  },
+  {
+    "query": "how do i get better at writing? i feel like my essays are technically fine but they're boring to read",
+    "should_trigger": true
+  },
+  {
+    "query": "我想快速了解一下区块链是什么，不需要深入，就是能跟人聊天时不露怯",
+    "should_trigger": true
+  },
+  {
+    "query": "I need to learn SQL for a new job that starts in 3 weeks. I've never touched databases before. What's the fastest path?",
+    "should_trigger": true
+  },
+  {
+    "query": "帮我整理一下学习费曼技巧的要点，我看了几篇文章但说法不一",
+    "should_trigger": false
+  },
+  {
+    "query": "can you summarize the key ideas from 'Thinking in Systems' by Donella Meadows?",
+    "should_trigger": false
+  },
+  {
+    "query": "我在学React，遇到一个useEffect的bug，当依赖数组里放了一个对象，每次渲染都会重新触发，怎么解决",
+    "should_trigger": false
+  },
+  {
+    "query": "what's the difference between supervised and unsupervised learning? just a quick explanation",
+    "should_trigger": false
+  },
+  {
+    "query": "帮我写一份学习计划模板，我想用来管理我的读书笔记",
+    "should_trigger": false
+  },
+  {
+    "query": "I'm a teacher and I want to design a curriculum for my students to learn about climate change. Can you help me structure the topics?",
+    "should_trigger": false
+  },
+  {
+    "query": "解释一下什么是边际成本递减，我在看一本经济学书",
+    "should_trigger": false
+  },
+  {
+    "query": "what are the best resources for learning Rust? looking for book recommendations",
+    "should_trigger": false
+  },
+  {
+    "query": "我想了解一下番茄工作法，帮我搜索一下相关信息",
+    "should_trigger": false
+  },
+  {
+    "query": "I just finished reading about compound interest and I think I get it — money grows exponentially over time. Can you quiz me on this?",
+    "should_trigger": true
+  },
+  {
+    "query": "我有一份500页的行业研究报告，帮我提炼出最重要的10个洞察",
+    "should_trigger": false
+  }
+]

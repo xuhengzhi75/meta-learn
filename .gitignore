@@ -1,0 +1,8 @@
+# Eval workspace outputs (large, not useful in git)
+evals/workspace/iteration-*/
+evals/workspace/desc-opt*
+evals/workspace/*.log
+
+# Keep evals.json and trigger-eval.json
+!evals/evals.json
+!evals/workspace/trigger-eval.json
